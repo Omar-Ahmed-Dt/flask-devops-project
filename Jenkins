@@ -11,7 +11,7 @@ pipeline {
            steps {
               script {
                  ansiblePlaybook(
-                    credentialsId: 'DT_ID',
+                    credentialsId: 'DT',
                     inventory: 'inv',
                     playbook: 'install_docker.yaml'
             )
