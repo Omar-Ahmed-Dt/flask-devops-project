@@ -1,6 +1,6 @@
 ---
 - name: Install Jenkins
-  hosts: test2
+  hosts: test1
   become: true
   tasks:
 
