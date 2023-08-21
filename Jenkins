@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent {lable 'slave1'}
   
    environment {
        DOCKER_HUB_REPO = "omar9289/flask-hello-world"

@@ -1,0 +1,28 @@
+---
+- name: Install Jenkins
+  hosts: test1
+  become: true
+  tasks:
+    - name: Install Java
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
+    - name: Add Jenkins repository key
+      apt_key:
+        url: https://pkg.jenkins.io/debian/jenkins.io.key
+        state: present
+
+    - name: Add Jenkins repository (without GPG check)
+      apt_repository:
+        repo: deb [trusted=yes] http://pkg.jenkins.io/debian-stable binary/
+        state: present
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: present
