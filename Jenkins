@@ -15,6 +15,7 @@ pipeline {
                 playbook: 'install_docker.yaml'
             )
                }
+                                  }
        stage('Build') {
            steps {
                sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
