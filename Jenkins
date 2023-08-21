@@ -8,16 +8,13 @@ pipeline {
   
    stages {
     stage('Deploy with Ansible') {
-    steps {
-        script {
+        steps {
             ansiblePlaybook(
                 credentialsId: 'DT',
                 inventory: 'inv',
                 playbook: 'install_docker.yaml'
             )
                }
-          }
-                                }
        stage('Build') {
            steps {
                sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
