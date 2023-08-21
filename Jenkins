@@ -5,17 +5,7 @@ pipeline {
        DOCKER_HUB_REPO = "omar9289/flask-hello-world"
        CONTAINER_NAME = "flask-hello-world"
    }
-  
    stages {
-    stage('Deploy with Ansible') {
-        steps {
-            ansiblePlaybook(
-                credentialsId: 'DT',
-                inventory: 'inv',
-                playbook: 'install_docker.yaml'
-            )
-               }
-                                  }
        stage('Build') {
            steps {
                sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
