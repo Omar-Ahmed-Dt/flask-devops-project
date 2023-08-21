@@ -1,10 +1,10 @@
 all:
   hosts:
     test1:
-      ansible_host: 3.81.203.244
+      ansible_host: 52.206.51.105
       ansible_user: ubuntu
       ansible_ssh_private_key_file: DT.pem
     test2:
-      ansible_host: 54.86.239.203
+      ansible_host: 54.172.37.243
       ansible_user: ubuntu
       ansible_ssh_private_key_file: DT.pem

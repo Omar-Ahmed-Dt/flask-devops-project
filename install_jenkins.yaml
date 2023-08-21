@@ -1,12 +1,8 @@
 ---
 - name: Install Jenkins
-  hosts: test1
+  hosts: test2
   become: true
   tasks:
-    - name: Install Java
-      apt:
-        name: openjdk-11-jdk
-        state: present
 
     - name: Add Jenkins repository key
       apt_key:
@@ -21,6 +17,11 @@
     - name: Update apt cache
       apt:
         update_cache: yes
+
+    - name: Install Java
+      apt:
+        name: openjdk-11-jdk
+        state: present
 
     - name: Install Jenkins
       apt:
